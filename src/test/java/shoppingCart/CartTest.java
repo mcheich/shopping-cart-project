@@ -66,36 +66,37 @@ public class CartTest {
 	}
 
 	@Test
-	public void CartTotals123Dollars() {
+	public void CartTotals169Dollars() {
 		// Arrange
 		Cart underTest = new Cart();
 		Item item1 = new Item("Bike", 100, 1);
-		Item item2 = new Item("Running Shoes", 20, 1);
-		Item item3 = new Item("candy", 3, 64);
+		Item item2 = new Item("Running Shoes", 20, 3);
+		Item item3 = new Item("candy", 3, 3);
 		// Act
 		underTest.addItem(item1);
 		underTest.addItem(item2);
 		underTest.addItem(item3);
 		double result = underTest.getTotal();
+		System.out.println(result);
 		// Assert
-		assertTrue(123 == result);
+		assertTrue(169 == result);
 	}
 
 	@Test
 	public void CartTotals120Dollars() {
 		// Arrange
 		Cart underTest = new Cart();
-		Item item1 = new Item("Bike", 100, 1);
+		Item item1 = new Item("Bike", 100, 2);
 		Item item2 = new Item("Running Shoes", 20, 1);
-		Item item3 = new Item("candy", 3, 64);
+		Item item3 = new Item("candy", 3, 1);
 		// Act
 		underTest.addItem(item1);
 		underTest.addItem(item2);
 		underTest.addItem(item3);
-		underTest.removeItem("candy");
 		double result = underTest.getTotal();
+		System.out.println(result);
 		// Assert
-		assertTrue(120 == result);
+		assertTrue( 223 == result);
 	}
 
 	@Test
@@ -104,7 +105,6 @@ public class CartTest {
 		Item item = new Item("Bike", 100, 1);
 		//Act
 		String result = item.toString();
-		System.out.println(result);
 		//Assert
 		assertEquals("Item: Bike                 price: $100.00               Qty: 1", result);
 	}
@@ -133,7 +133,6 @@ public class CartTest {
 		underTest.addOrder("Bike",price,quantity);
 		//Act
 		String result = underTest.getItems().get(0).toString();
-		System.out.println(result);
 		//Assert
 		assertEquals("Item: Bike                 price: $100.00               Qty: 1", result);
 	}
