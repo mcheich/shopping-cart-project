@@ -117,7 +117,7 @@ public class CartTest {
 		double price = 2500;
 		int quantity = 1;
 		//Act
-		underTest.addOrder("Bike",price,quantity);
+		underTest.addOrder(name,price,quantity);
 		//Assert
 		assertEquals(1, underTest.numOrders());
 	}
@@ -130,7 +130,7 @@ public class CartTest {
 		double price = 100;
 		int quantity = 1;
 		//Act
-		underTest.addOrder("Bike",price,quantity);
+		underTest.addOrder(name,price,quantity);
 		//Act
 		String result = underTest.getItems().get(0).toString();
 		//Assert
