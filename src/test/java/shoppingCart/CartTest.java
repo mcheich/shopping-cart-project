@@ -106,8 +106,38 @@ public class CartTest {
 		String result = item.toString();
 		System.out.println(result);
 		//Assert
-		assertEquals("Item: Bike     price: $100.00     Qty: 1", result);
+		assertEquals("Item: Bike                 price: $100.00               Qty: 1", result);
 	}
+	
+	@Test
+	public void addOrderAdds1ItemToOrder() {
+		//Arrange
+		Cart underTest = new Cart();
+		String name = "Bike";
+		double price = 2500;
+		int quantity = 1;
+		//Act
+		underTest.addOrder("Bike",price,quantity);
+		//Assert
+		assertEquals(1, underTest.numOrders());
+	}
+	
+	@Test
+	public void addOrderAddsCorrectToOrder() {
+		//Arrange
+		Cart underTest = new Cart();
+		String name = "Bike";
+		double price = 100;
+		int quantity = 1;
+		//Act
+		underTest.addOrder("Bike",price,quantity);
+		//Act
+		String result = underTest.getItems().get(0).toString();
+		System.out.println(result);
+		//Assert
+		assertEquals("Item: Bike                 price: $100.00               Qty: 1", result);
+	}
+	
 	
 //	@Test
 //	public void showOrdersShouldDisplayToConsole() {

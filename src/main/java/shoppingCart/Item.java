@@ -50,7 +50,7 @@ public class Item {
 
 	public String toString() {
 		String description = "";
-		description = String.format("Item: %1$-20s price: $%2$-20.2f Qty: %3$-20s", name, price,quantity);
+		description = String.format("Item: %1$-20s price: $%2$-20.2f Qty: %3$s", name, price,quantity);
 		return description;
 		
 	}

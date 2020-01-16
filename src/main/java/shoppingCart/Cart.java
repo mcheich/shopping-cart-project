@@ -45,6 +45,10 @@ public class Cart {
 		}
 		
 	}
+/**
+ * Gets total cost of all items in cart
+ * @return total cost
+ */
 
 	public double getTotal() {
 		double totalCost = 0;
@@ -54,11 +58,20 @@ public class Cart {
 		}
 		return totalCost;
 	}
-
+/**
+ * Displays all orders to console
+ */
 	public void showOrders() {
 		
 		for(Item item: items) {
 			System.out.println(item.toString());
 		}
 	}
+	
+
+	public void addOrder(String name, double price, int quantity) {
+		Item newItem = new Item(name, price, quantity);
+		items.add(newItem);
+	}
+
 }
