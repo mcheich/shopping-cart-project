@@ -9,6 +9,7 @@ public class Cart {
 	private ArrayList<Item> items = new ArrayList<Item>();
 
 	public void addItem(Item item) {
+		
 		items.add(item);
 	}
 
@@ -54,4 +55,10 @@ public class Cart {
 		return totalCost;
 	}
 
+	public void showOrders() {
+		
+		for(Item item: items) {
+			System.out.println(item.toString());
+		}
+	}
 }
